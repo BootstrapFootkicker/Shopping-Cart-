@@ -1,0 +1,12 @@
+.navbar{
+    display: flex;
+    outline: red 2px solid;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.homeLogoDiv{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
