@@ -18,6 +18,5 @@ export function DataHandler() {
     loadProductData();
   }, []);
 
-  console.log(productData);
   return productData;
 }

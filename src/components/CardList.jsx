@@ -3,17 +3,17 @@ import { Card } from "./Card.jsx";
 import { useState } from "react";
 
 export function CardList() {
-  const pokemonData = DataHandler();
+  const productData = DataHandler();
   const [cardList, setCardList] = useState([]);
 
-  pokemonData.map((pokemon, index) => {
+  productData.map((product, index) => {
     setCardList(
       cardList.concat(
         <Card
           key={index}
-          sprite={pokemon.sprites.front_default}
-          name={pokemon.name}
-          types={pokemon.types}
+          image={product.image}
+          name={product.name}
+          price={product.price}
         />,
       ),
     );

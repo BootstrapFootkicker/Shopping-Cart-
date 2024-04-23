@@ -1,31 +1,23 @@
 import "..//styles/grid.css";
 import { Card } from "./Card.jsx";
-import { Header } from "./Header.jsx";
 import { useState, useEffect } from "react";
 
-export function Grid({ pokemonData: productData }) {
+export function Grid({productData}) {
   const [cardList, setCardList] = useState([]);
-  const [shuffledData, setShuffledData] = useState([]);
-  const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
-  const [clicked, setClicked] = useState([]);
 
-  useEffect(() => {
-    //maps the pokemon data to the card component
-    const newCardList = shuffledData.map((pokemon, index) => {
-      return (
-        <Card
-          key={index}
-          sprite={pokemon.sprites.front_default}
-          name={pokemon.name}
-          types={pokemon.types}
-          eventTrigger={cardClick}
-        />
-      );
-    });
 
-    setCardList(newCardList);
-  }, [shuffledData]);
+ useEffect(() => {
+  const newCardList = productData.map((product, index) => (
+    <Card
+      key={index}
+      image={product.image}
+      name={product.title}
+      price={product.price}
+    />
+  ));
+  setCardList(newCardList);
+}, [productData]);
+
   // function cardClick(name) {
   //         if (clicked.includes(name)) {
   //             if (score > highScore) {

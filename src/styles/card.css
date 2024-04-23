@@ -10,10 +10,20 @@
 
 
 }
+.price-text{
+    font-size: 1.5rem;
+    font-weight: bold;
 
-.sprite-container
+}
+.product-image-container
 {
 width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+
 }
 
 .card-info-container{
@@ -22,7 +32,7 @@ width: 100%;
     align-items: center;
 }
 
-.sprite{
-   width: 100%;
-    height: auto;
+.product-image{
+ width: 200px;
+    height: 200px;
 }

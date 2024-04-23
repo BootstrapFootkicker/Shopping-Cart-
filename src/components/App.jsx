@@ -4,13 +4,14 @@ import viteLogo from "/vite.svg";
 import "../styles/App.css";
 import { Navbar } from "./Navbar.jsx";
 import { DataHandler } from "./DataHandler.jsx";
+import { Grid } from "./Grid.jsx";
 
 export function App() {
   const dataHandler = DataHandler();
   return (
     <>
       <Navbar />
-      <p>This is a test</p>
+      <Grid productData={dataHandler} />
     </>
   );
 }
