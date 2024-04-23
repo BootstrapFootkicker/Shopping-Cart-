@@ -2,35 +2,22 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export function DataHandler() {
-  const [pokemonData, setPokemonData] = useState([]);
+  const [productData, setProductData] = useState([]);
 
   useEffect(() => {
-    //gets first 10 pokemon name data from the pokeapi
-    const loadPokemon = async () => {
-      const pokemonNames = await axios.get(
-        "https://pokeapi.co/api/v2/pokemon?limit=10",
-
+    //gets  10 products from fakestoreapi
+    const loadProductData = async () => {
+      const productInfo = await axios.get(
+        "https://fakestoreapi.com/products?limit=10",
       );
 
-      //uses pokemon name data to get the pokemon data i.e. sprite, name, types
-      const pokemonPull = await Promise.all(
-        pokemonNames.data.results.map(async (pokemon) => {
-          const response = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`,
-          );
-          return response.data;
-        }),
-
-
-      );
-
-      setPokemonData(pokemonPull);
+      setProductData(productInfo.data);
     };
 
-    //runs the loadPokemon function so data is available on mount
-    loadPokemon();
+    //runs the loadProductData function so data is available on mount
+    loadProductData();
   }, []);
 
-
-  return pokemonData;
+  console.log(productData);
+  return productData;
 }

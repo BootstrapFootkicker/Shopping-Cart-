@@ -6,7 +6,7 @@ export function Navbar() {
       <div className={"navbar"}>
         <div className="homeLogoDiv">
           <div className={"navbarLogo"}>
-            <img src="../assets/logo.png" alt="Boot Logo" className="logo" />
+            <img src="src/assets/logo.png" alt="Boot Logo" className="logo" />
           </div>
           <button className="navButton">Home</button>
         </div>

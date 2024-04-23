@@ -3,8 +3,10 @@ import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/App.css";
 import { Navbar } from "./Navbar.jsx";
+import { DataHandler } from "./DataHandler.jsx";
 
 export function App() {
+  const dataHandler = DataHandler();
   return (
     <>
       <Navbar />
