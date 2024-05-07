@@ -5,21 +5,18 @@ import "../styles/App.css";
 import {Navbar} from "./Navbar.jsx";
 import {DataHandler} from "./DataHandler.jsx";
 import {Grid} from "./Grid.jsx";
-
-export function App() {
-
-
-    const dataHandler = DataHandler();
-    const [cart, setCart] = useState([]);
-
-    useEffect(() => {
-        console.log(cart);
-    }, [cart]);
-
-    return (
+import {Cart} from "./Cart.jsx";
+import {Route, Routes} from "react-router-dom";
+import {Home} from "./Home.jsx";
+export function App(){
+        const [cart, setCart] = useState([]);
+    return(
         <>
-            <Navbar/>
-            <Grid productData={dataHandler} />
+        <Routes>
+            <Route path="/" element={<Home cart={cart} setCart={setCart}/>} />
+            <Route path="/cart" element={<Cart currentCart={cart}/>} />
+        </Routes>
         </>
-    );
+    )
+
 }

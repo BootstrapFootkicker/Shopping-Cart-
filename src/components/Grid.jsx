@@ -2,9 +2,9 @@ import "..//styles/grid.css";
 import {Card} from "./Card.jsx";
 import {useState, useEffect} from "react";
 
-export function Grid({productData}) {
+export function Grid({productData,cart,setCart}) {
     const [cardList, setCardList] = useState([]);
-    const [cart, setCart] = useState([]);
+
 
     useEffect(() => {
         const newCardList = productData.map((product, index) => (
