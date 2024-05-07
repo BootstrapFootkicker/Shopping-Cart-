@@ -9,6 +9,11 @@ import {Cart} from "./Cart.jsx";
 import {Route, Routes} from "react-router-dom";
 import {Home} from "./Home.jsx";
 export function App(){
+
+    //todo add remove item to cart
+    //todo add total price to cart
+    //todo add counter to cart
+    //todo style cart page
         const [cart, setCart] = useState([]);
     return(
         <>
