@@ -1,7 +1,7 @@
 import "../styles/Navbar.css";
 import {Cart} from "./Cart.jsx";
 import {Link} from "react-router-dom";
-export function Navbar() {
+export function Navbar({cartQty}) {
   return (
     <>
       <div className={"navbar"}>
@@ -13,7 +13,8 @@ export function Navbar() {
         </div>
 
         <div className="cartDiv">
-          <Link to={'/cart'} className="cartButton">Cart</Link>
+          <Link  to={'/cart'} className="cartButton">Cart<sub >{cartQty}</sub></Link>
+
         </div>
       </div>
     </>

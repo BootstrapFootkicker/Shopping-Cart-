@@ -10,16 +10,24 @@ import {Route, Routes} from "react-router-dom";
 import {Home} from "./Home.jsx";
 export function App(){
 
-    //todo add remove item to cart
-    //todo add total price to cart
-    //todo add counter to cart
-    //todo style cart page
-        const [cart, setCart] = useState([]);
+
+    const [cart, setCart] = useState([]);
+    const[cartQty, setCartQty] = useState(0);
+
+useEffect(() => {
+    let total = 0;
+    cart.forEach(item => {
+        total += Number(item.qty);
+    });
+    setCartQty(total);
+    console.log(cartQty);
+}, [cart]);
+
     return(
         <>
         <Routes>
-            <Route path="/" element={<Home cart={cart} setCart={setCart}/>} />
-            <Route path="/cart" element={<Cart currentCart={cart}/>} />
+            <Route path="/" element={<Home cart={cart} setCart={setCart} cartQty={cartQty}/>} />
+            <Route path="/cart" element={<Cart currentCart={cart} setCart={setCart} cartQty={cartQty} setCartQty={setCartQty}/>} />
         </Routes>
         </>
     )

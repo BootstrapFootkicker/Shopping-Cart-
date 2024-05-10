@@ -5,7 +5,7 @@ import {Cart} from "./Cart.jsx";
 import {Navbar} from "./Navbar.jsx";
 import {Grid} from "./Grid.jsx";
 
-export function Home({cart, setCart}) {
+export function Home({cart, setCart,cartQty}) {
 
 
     const dataHandler = DataHandler();
@@ -17,7 +17,7 @@ export function Home({cart, setCart}) {
 
     return (
         <>
-            <Navbar/>
+            <Navbar cartQty={cartQty}/>
             <Grid productData={dataHandler} setCart={setCart} cart={cart} />
         </>
     );
